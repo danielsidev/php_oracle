@@ -2,7 +2,7 @@
 
 Uma pequena aplicação web em PHP para demonstrar como é
 
-realizada a conexão com o oracle(nesse caso o oreacle x 11g) e 
+realizada a conexão com o oracle(nesse caso o oracle xe 11g) e 
 
 um exemplo de CRUD genérico.
 
