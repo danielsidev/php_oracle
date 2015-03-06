@@ -1,6 +1,6 @@
 
 
-Uma pequena aplicação web em PHP para demonstrar como é
+Uma pequena aplicação web em PHP 5.* OO para demonstrar como é
 
 realizada a conexão com o oracle(nesse caso o oracle xe 11g) e 
 
