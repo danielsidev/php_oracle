@@ -1,23 +1,25 @@
+#PHP with Oracle
+A small web application to show how to connect PHP with Oracle and how to create a CRUD generic
 
+#Description
+A small web application in PHP 5. * OO to demonstrate how
 
-Uma pequena aplicação web em PHP 5.* OO para demonstrar como é
+made the connection to the oracle (in this case Oracle 11g x) and
 
-realizada a conexão com o oracle(nesse caso o oracle xe 11g) e 
+an example of a generic CRUD.
 
-um exemplo de CRUD genérico.
+#Reminder:
 
-Lembrete:
+It is necessary that a sequence is created for the inserts.
 
-É necessário que seja criada uma sequence para as inserções.
+In insert.php file dexei the commented code of sequence created for this project.
 
-No arquivo insert.php dexei o código comentado da sequence criada para este projeto.
+To see this project going, remember to set the file DAO.php
 
-Para ver esse projeto funcionando, lembre-se de configurar o arquivo DAO.php
+as your user name, password and host.
 
-como seu usuário, senha e host.
+Also be sure to create the agenda_contato table.
 
-Também não se esqueça de criar a tabela agenda_contato. 
-
-Para isso, basta rodar o arquivo: criarAgenda.php
+Simply run the file: criarAgenda.php
 
 
