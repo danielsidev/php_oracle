@@ -20,6 +20,6 @@ $dao = new CrudDAO();
 
 $dao->createTable($query);
 
-//header("Location:listUsers.php");
+//header("Location:listaAgenda.php");
 
 

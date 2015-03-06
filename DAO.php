@@ -3,10 +3,10 @@
 class DAO {
   
      protected $db;
-     private $host="localhost";
-     private $dbname="xe";
-     private $user="system";
-     private $password="123";
+     private $host="localhost"; // ou o ip
+     private $dbname="xe"; // nome do seu banco, caso esteja com a versão do oracle enterprise
+     private $user="";//system / sysdba / ou um usuário qualquer
+     private $password=""; //sua senha
 
     public function __construct() {
 
@@ -14,11 +14,9 @@ class DAO {
         try {
            $conn = $this->db = oci_connect($this->user,$this->password, $this->host.'/'.$this->dbname);
             if (!$conn) {
-		echo "ERRO ao conectar!";
+		        echo "ERRO ao conectar!";
                 throw new Exception("Não foi possível conectar ao banco!");
-            }else{
-		//echo "Conectado ao banco Oracle com sucesso!";
-	}
+            } /* else{echo "Conectado ao banco Oracle com sucesso!";} */
         } catch (Exception $e) {
             echo $e->getMessage() . "<br>Error na linha:  ";
             echo "<b>" . $e->getLine() . "</b>";
@@ -32,12 +30,8 @@ class DAO {
     }
 
 }
+//new DAO(); //Para testar a conexão
 
-//new DAO();
-/*
-ORACLE_HOME=/u01/app/oracle/product/11.2.0/xe ./configure --with-pdo-oci=instantclient,/usr/lib/oracle/11.2/client64/lib/,11.2
-
-*/
 ?>
 
 
