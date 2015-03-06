@@ -9,12 +9,11 @@ $iduser=0;
 $label="";
 if(isset($_GET["id"]) && $_GET["id"]>0){
 
-
 $id = $_GET["id"];
 $url="editar.php";
 $label="Editar";
 
-require_once 'CrudDAO.Class.php';
+require_once 'model/CrudDAO.Class.php';
 $dao = new CrudDAO();
 
 $stid = $dao->read("agenda_contato", null, "where id=".$id);
@@ -34,15 +33,15 @@ $contatos["celular"] = $contato["CELULAR"][0];
 $contatos["email"] = $contato["EMAIL"][0];
 
 if(isset($iduser) && $iduser>0){
-$url="editar.php";
+$url="controller/editar.php";
 $label="Editar";
 }else{
-$url="inserir.php";
+$url="controller/inserir.php";
 $label="Cadastrar";
 }
 
 }else{
-$url="inserir.php";
+$url="controller/inserir.php";
 $label="Cadastrar";
 }
 ?>

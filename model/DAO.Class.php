@@ -5,8 +5,8 @@ class DAO {
      protected $db;
      private $host="localhost"; // ou o ip
      private $dbname="xe"; // nome do seu banco, caso esteja com a versão do oracle enterprise
-     private $user="";//system / sysdba / ou um usuário qualquer
-     private $password=""; //sua senha
+     private $user="system";//system / sysdba / ou um usuário qualquer
+     private $password="123"; //sua senha
 
     public function __construct() {
 

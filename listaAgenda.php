@@ -3,7 +3,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 header('Content-Type: text/html ; charset=utf-8');
 echo "<meta http-equiv=\"Content-type\" content=\"text/html; charset=utf-8\" />";
-require_once 'CrudDAO.Class.php';
+require_once 'model/CrudDAO.Class.php';
 
 $dao = new CrudDAO();
 
@@ -23,7 +23,7 @@ while ($row = oci_fetch_array($stid, OCI_RETURN_NULLS+OCI_ASSOC)) {
         ."<td>".$row["CELULAR"]."</td>"
         ."<td>".$row["EMAIL"]."</td>"; 
    echo  "<td> <a href='novoContato.php?id=".$row["ID"]."'>Editar</a></td>";
-   echo  "<td> <a href='excluir.php?id=".$row["ID"]."'>Excluir</a></td>";
+   echo  "<td> <a href='controller/excluir.php?id=".$row["ID"]."'>Excluir</a></td>";
    print '</tr>';
 
 //var_dump($row);

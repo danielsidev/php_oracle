@@ -1,5 +1,5 @@
 <?php
-require_once 'DAO.php';
+require_once 'DAO.Class.php';
 /*****  CRUD PARA BANCO ORACLE *****/
 class CrudDAO extends DAO {
 
@@ -25,8 +25,7 @@ class CrudDAO extends DAO {
  
     }
     
-    
-    
+       
 /********************Insere os dados**********************************/
     public function insert($tabela, Array $dados) {
   
@@ -51,8 +50,8 @@ class CrudDAO extends DAO {
              parent::fechar();
         }
     }
-    
-        public function insertfree($tabela, Array $dados) {
+/********************Insere os dados em Loop **********************************/    
+        public function insertFree($tabela, Array $dados) {
   
         foreach ($dados as $inds => $vals) {
             $campos[] = $inds;
@@ -78,11 +77,6 @@ class CrudDAO extends DAO {
 
     }
 
-    /* Chamo método dessa forma:
-     * $db = new Model(); 
-     * $db->conecta();//Faz a conexão com o banco
-     * $db->insert('tabela', array('campo1'=>'valor1', 'campo2'=>'valor2'));
-     */
 /********************Le os dados do banco(Retorna os dados)*****************************/
     public function read($tabela, $campos=null, $criterio=null) {
         
@@ -100,7 +94,7 @@ class CrudDAO extends DAO {
               parent::fechar();
  }
     }
-
+/********************Retorna total de linhas da tabela**********************************/
 public function returnCount($tabela){
 
    try {
@@ -138,8 +132,8 @@ public function returnCount($tabela){
             parent::fechar();
         }
     }
-    
-    public function updatefree($tabela, Array $dados, $criterio) {
+/********************Atualiza os dados em Loop**********************************/    
+    public function updateFree($tabela, Array $dados, $criterio) {
 
         foreach ($dados as $inds => $vals) {
             ////Se for inteiro atualiza como inteiro, senão acrescenta '' e atualiza como string
@@ -162,7 +156,7 @@ public function returnCount($tabela){
 
 
     
-    /********************Deleta os dados**********************************/
+/********************Deleta os dados**********************************/
     public function delete($tabela, $criterio) {
         try {          
              $stmt = "delete from {$tabela}  where {$criterio}";
@@ -177,11 +171,9 @@ public function returnCount($tabela){
 
  
     }
-    
-    
-    
-    
-    public function deletefree($tabela, $criterio) {
+        
+/********************Deleta os dados em Loop**********************************/    
+    public function deleteFree($tabela, $criterio) {
        try {          
              $stmt = "delete from {$tabela}  where {$criterio}";
              $s = oci_parse($this->db, $stmt);
@@ -196,4 +188,3 @@ public function returnCount($tabela){
 
 }
 
-?>
