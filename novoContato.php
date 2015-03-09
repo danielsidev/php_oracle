@@ -1,5 +1,10 @@
 <?php
-
+/*******************************************************************
+@A small web application in PHP 5. * OO to demonstrate how
+@made the connection to the oracle (in this case the Oracle Xe 11g) and
+@an example of generic CRUD with PDO.
+@Developed by Daniel Mello Siqueira: http://danielsiqueira.net
+********************************************************************/
 header('Content-Type: text/html ; charset=utf-8');
 echo "<meta http-equiv=\"Content-type\" content=\"text/html; charset=utf-8\" />";
 $url="";
